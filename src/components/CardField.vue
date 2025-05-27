@@ -137,7 +137,7 @@ const showResult = () => {
   <button
     class="button mx-auto p-5 rounded-2xl text-[#BE1622] bg-[#BE1622] text-3xl border border-[#BE1622] text-center uppercase"
     @click="showField()" v-if="!gameStarted">
-    <span class="relative z-10 bebas">Погнали</span>
+    <span class="relative z-10 bebas">Гойда</span>
   </button>
   <Transition name="fade">
     <Modal @close="close" @start="newGame()" v-if="showModal" :result="result"></Modal>
