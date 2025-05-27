@@ -12,6 +12,7 @@ import durenImg from '@/assets/img/duren.jpg';
 import energiyaImg from '@/assets/img/energiya.jpg';
 import excessImg from '@/assets/img/excess.jpeg';
 import izgoyImg from '@/assets/img/izgoy.jpg';
+import jazzImg from '@/assets/img/jazz.jpg';
 import lesnichiyImg from '@/assets/img/lesnichiy.jpg';
 import metkaImg from '@/assets/img/metka.jpg';
 import moonImg from '@/assets/img/moon.jpg';
@@ -25,6 +26,8 @@ import solncevorotImg from '@/assets/img/Solncevorot.jpg';
 import tantsevatImg from '@/assets/img/tantsevat.jpg';
 import znakImg from '@/assets/img/znak.jpg';
 import dudkaImg from '@/assets/img/dudka.jpg';
+import goidaImg from '@/assets/img/goida.jpg';
+import d2012Img from '@/assets/img/2012.jpg';
 
 import goodKostya from '@/assets/img/goodKostya.png';
 import badKostya from '@/assets/img/badKostya.png';
@@ -33,13 +36,13 @@ const images = [
   d206Img, adaImg, cirkImg, durenImg, energiyaImg,
   excessImg, izgoyImg, lesnichiyImg, metkaImg, moonImg,
   posolonImg, pozdneeImg, pulsImg, sabotazImg, severImg,
-  shabashImg, solncevorotImg, tantsevatImg, znakImg, dudkaImg
+  shabashImg, solncevorotImg, tantsevatImg, znakImg, dudkaImg, jazzImg,
+  goidaImg, d2012Img
 ];
 
 const gameStarted = ref(false);
 const showModal = ref(false);
-const result = ref({
-});
+const result = ref({});
 const count = ref(0);
 
 const showField = () => {
@@ -91,7 +94,7 @@ const close = () => {
 }
 
 const coutnPercent = () => {
-  return Math.floor((cards.length / count.value) * 100);
+  return Math.floor((cards.length / count.value) * 10);
 }
 
 const finalCounter = () => {
@@ -107,7 +110,6 @@ const newGame = () => {
   Object.assign(cards, getInitialCards());
   shuffleCards();
   close();
-  gameStarted.value = true;
 }
 
 const showResult = () => {
@@ -128,8 +130,8 @@ const showResult = () => {
 </script>
 
 <template>
-  <h1 class="flex flex-col justify-center items-center text-center text-3xl mt-6 mb-[3.25rem]">
-    <Logo class="mb-[4.125rem] max-w-[90%]" :class="gameStarted ? 'w-[14.5rem]' : 'w-[30rem]'" />
+  <h1 class="flex flex-col justify-center items-center text-center text-xl xl:text-3xl mb-6 xl:mb-10">
+    <Logo class="max-w-[90%]" :class="gameStarted ? 'w-[14.5rem]' : 'w-[30rem] mb-[4.125rem] '" />
     <div class="max-w-[19rem] mx-auto" v-if="!gameStarted">Насколько <br /> ты алисоман</div>
   </h1>
   <button
@@ -140,6 +142,7 @@ const showResult = () => {
   <Transition name="fade">
     <Modal @close="close" @start="newGame()" v-if="showModal" :result="result"></Modal>
   </Transition>
+
   <section class="justify-center grid grid-cols-4 md:grid-cols-6 xl:grid-cols-8 gap-2 md:gap-4" v-if="gameStarted">
     <Card v-for="(card, index) in cards" :key="index" :card="card" @click="flipCard(card)" />
   </section>
