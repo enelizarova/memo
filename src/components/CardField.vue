@@ -34,10 +34,10 @@ import badKostya from '@/assets/img/badKostya.png';
 
 const images = [
   d206Img, adaImg, cirkImg, durenImg, energiyaImg,
-  // excessImg, izgoyImg, lesnichiyImg, metkaImg, moonImg,
-  // posolonImg, pozdneeImg, pulsImg, sabotazImg, severImg,
-  // shabashImg, solncevorotImg, tantsevatImg, znakImg, dudkaImg, jazzImg,
-  // goidaImg, d2012Img
+  excessImg, izgoyImg, lesnichiyImg, metkaImg, moonImg,
+  posolonImg, pozdneeImg, pulsImg, sabotazImg, severImg,
+  shabashImg, solncevorotImg, tantsevatImg, znakImg, dudkaImg, jazzImg,
+  goidaImg, d2012Img
 ];
 
 const gameStarted = ref(false);
