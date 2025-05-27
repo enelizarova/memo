@@ -19,7 +19,7 @@ const close = () => {
     <div class="fixed inset-x-0 inset-y-0 flex items-center justify-center z-50">
         <div class="absolute inset-x-0 inset-y-0 bg-black/60">
         </div>
-        <section class="relative flex flex-col justify-center items-center bg-[#181818] border-[#BE1622] border-[6px] rounded-[20px] py-10 px-[8.25rem]">
+        <section class="max-w-full relative flex flex-col justify-center items-center bg-[#181818] border-[#BE1622] border-[6px] rounded-[20px] py-10 px-[8.25rem]">
           <div class="absolute inset-x-0 inset-y-0 pointer-events-none">
               <Fire class="absolute inset-x-0 bottom-0" />
             </div>

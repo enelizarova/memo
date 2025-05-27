@@ -20,6 +20,7 @@ body {
 
 .bebas {
   font-family: 'Bebas';
+  line-height: 1.125;
 } 
 
 .fade-enter-from,

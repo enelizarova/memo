@@ -34,10 +34,10 @@ import badKostya from '@/assets/img/badKostya.png';
 
 const images = [
   d206Img, adaImg, cirkImg, durenImg, energiyaImg,
-  excessImg, izgoyImg, lesnichiyImg, metkaImg, moonImg,
-  posolonImg, pozdneeImg, pulsImg, sabotazImg, severImg,
-  shabashImg, solncevorotImg, tantsevatImg, znakImg, dudkaImg, jazzImg,
-  goidaImg, d2012Img
+  // excessImg, izgoyImg, lesnichiyImg, metkaImg, moonImg,
+  // posolonImg, pozdneeImg, pulsImg, sabotazImg, severImg,
+  // shabashImg, solncevorotImg, tantsevatImg, znakImg, dudkaImg, jazzImg,
+  // goidaImg, d2012Img
 ];
 
 const gameStarted = ref(false);
@@ -93,9 +93,11 @@ const close = () => {
   showModal.value = false;
 }
 
-const coutnPercent = () => {
-  return Math.floor((cards.length / count.value) * 10);
-}
+const countPercent = () => {
+  const minPossibleMoves = images.length * 3;
+  const efficiency = (minPossibleMoves / count.value) * 10;
+  return Math.min(Math.floor(efficiency), 10);
+};
 
 const finalCounter = () => {
   if (cards.every(card => card.matched)) {
@@ -113,16 +115,16 @@ const newGame = () => {
 }
 
 const showResult = () => {
-  if (count.value <= 120) {
+  if (countPercent() > 6) {
     result.value = {
       title: 'молодец',
-      result: `${coutnPercent()}%`,
+      result: `${countPercent()}`,
       kostya: goodKostya
     }
   } else {
     result.value = {
-      title: 'так себе алисоман',
-      result: `${coutnPercent()}%`,
+      title: 'тоже мне алисоман',
+      result: `${countPercent()}`,
       kostya: badKostya
     }
   }
@@ -143,7 +145,7 @@ const showResult = () => {
     <Modal @close="close" @start="newGame()" v-if="showModal" :result="result"></Modal>
   </Transition>
 
-  <section class="justify-center grid grid-cols-4 md:grid-cols-6 xl:grid-cols-8 gap-2 md:gap-4" v-if="gameStarted">
+  <section class="justify-center grid grid-cols-4 sm:grid-cols-6 xl:grid-cols-8 gap-2 md:gap-4" v-if="gameStarted">
     <Card v-for="(card, index) in cards" :key="index" :card="card" @click="flipCard(card)" />
   </section>
 </template>
