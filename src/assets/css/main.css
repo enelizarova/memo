@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@import '../font/bebas/stylesheet.css';
+@import '../font/onest/stylesheet.css';
+
+@import './base';
+@import './button.css';
+@import './header.css';
