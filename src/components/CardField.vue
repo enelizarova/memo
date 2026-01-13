@@ -18,7 +18,6 @@ const {
   startGame,
   flipCard,
   newGame,
-  closeModal,
   progress
 } = useMemoGame()
 
@@ -28,8 +27,8 @@ onMounted(() => {
     opacity: [0, 1],
     duration: 1000,
     ease: spring({
-      bounce: 0.83,
-      duration: 628
+      bounce: 0.63,
+      duration: 600
     }),
     delay: stagger(50)
   })
@@ -45,7 +44,7 @@ onMounted(() => {
   </button>
 
   <Transition name="fade">
-    <Modal @close="closeModal" @start="newGame" v-if="showModal" :result="result" />
+    <Modal @start="newGame" v-if="showModal" :result="result" />
   </Transition>
 
   <section v-if="gameStarted" class="justify-center grid grid-cols-4 sm:grid-cols-6 xl:grid-cols-8 gap-2 md:gap-4">

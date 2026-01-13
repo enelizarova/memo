@@ -1,7 +1,7 @@
 <script setup>
 import { watch } from 'vue'
 import Logo from './Logo.vue'
-import { animate, spring, stagger } from 'animejs'
+import { animate, spring, cubicBezier } from 'animejs'
 
 const props = defineProps({
   gameStarted: Boolean
@@ -14,12 +14,10 @@ watch(() => props.gameStarted, () => {
 const play = () => {
   spring({ bounce: 0.83, duration: 628 })
   animate('.game-header__logo', {
-    width: '21rem',
-    duration: 500,
-    ease: spring({
-      bounce: 0.83,
-      duration: 628
-    })
+    width: '9rem',
+    marginBottom: '1rem',
+    duration: 300,
+    ease: cubicBezier(0, 0.668, 0.889, 0.713)
   })
 }
 </script>

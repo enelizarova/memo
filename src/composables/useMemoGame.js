@@ -85,10 +85,6 @@ export function useMemoGame() {
     showModal.value = false
   }
   
-  const closeModal = () => {
-    showModal.value = false
-  }
-  
   const progress = computed(() => {
     const matchedPairs = cards.value.filter(card => card.matched).length / 2
     return Math.round((matchedPairs / albumImages.length) * 100)
@@ -106,7 +102,6 @@ export function useMemoGame() {
     
     startGame,
     flipCard,
-    newGame,
-    closeModal
+    newGame    
   }
 }
