@@ -1,26 +1,36 @@
 .button {
-  position: relative;
-  transition: color 0.5s 0.1s ease-out;
-  overflow: hidden;
+  @apply relative overflow-hidden cursor-pointer;
+  @apply transition-colors duration-500 delay-100 ease-out;
 }
 
 .button::before {
-  content: '';
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  width: 15rem;
-  height: 15rem;
-  background-color: #181818;
-  border-radius: 50%;
-  transition: transform 0.5s ease;
+  @apply content-[""];
+  @apply absolute top-1/2 left-1/2 w-[15rem] h-[15rem] bg-base-strong rounded-full;
+  @apply -translate-1/2;
+  @apply transition-transform duration-500 ease-out;
 }
 
 .button:hover {
-  color: #fff;
+  @apply text-base-weak;
 }
 
 .button:hover::before {
+  @apply scale-0;
   transform: translate(-50%, -50%) scale(0);
+}
+
+.button--main {
+  @apply mx-auto mb-12 xl:mb-32 p-5;
+  @apply rounded-2xl border border-primary;
+  @apply text-primary bg-primary text-3xl text-center uppercase;
+}
+
+.button--modal {
+  @apply mx-auto mb-8 p-3;
+  @apply rounded-2xl text-primary bg-primary text-3xl border border-primary text-center uppercase;
+}
+
+.button--main span,
+.button--modal span {
+  @apply relative z-10 font-bebas;
 }

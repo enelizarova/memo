@@ -1,7 +1,6 @@
 import screens from './.tailwind/screens';
 import fontFamily from './.tailwind/font-family';
-import spacing from './.tailwind/spacing';
-import colors from './.tailwind/spacing';
+import colors from './.tailwind/colors';
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -17,8 +16,7 @@ export default {
     extend: {
       screens,
       fontFamily,
-      spacing,
-      colors,
+      colors
     }
   },
   plugins: []

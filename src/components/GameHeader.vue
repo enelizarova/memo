@@ -1,6 +1,6 @@
 <script setup>
 import { watch } from 'vue'
-import Logo from './Logo.vue'
+import Logo from './logo/Logo.vue'
 import { animate, spring, cubicBezier } from 'animejs'
 
 const props = defineProps({

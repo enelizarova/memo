@@ -1,6 +1,7 @@
 export default {
   '2xs': '250px',
   xs: '380px',
+  'xmd': '768px',
   '2xl': '1440px',
   '3xl': '1600px',
   '4xl': '1920px',

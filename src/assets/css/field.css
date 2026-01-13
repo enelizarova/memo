@@ -1,0 +1,7 @@
+.game-field {
+  @apply justify-center grid grid-cols-4 sm:grid-cols-6 xl:grid-cols-8 gap-2 md:gap-4;
+}
+
+.game-field__progress {
+  @apply col-span-full text-center mt-4 text-sm text-gray-400;
+}

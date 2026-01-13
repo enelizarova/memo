@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "./tailwind.css";
 
 @import '../font/bebas/stylesheet.css';
 @import '../font/onest/stylesheet.css';
@@ -6,3 +6,8 @@
 @import './base';
 @import './button.css';
 @import './header.css';
+
+@import './card.css';
+@import './field.css';
+@import './link.css';
+@import './modal.css';
