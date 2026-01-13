@@ -1,42 +1,36 @@
 .card {
   perspective: 1000px;
-  cursor: pointer;
+  @apply cursor-pointer;
   @apply size-[4.75rem] xmd:size-[7.125rem];
 }
 
 .card-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
+  @apply w-full h-full;
+  @apply object-cover rounded-xl;
 }
 
 .card-front,
 .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  @apply absolute;
+  @apply flex items-center justify-center;
+  @apply w-full h-full;
+  @apply text-[2rem] rounded-xl;
+
   backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  border-radius: 8px;
   transition: transform 0.6s, color 0.3s ease;
 }
 
 .card-front {
-  background: #f0f0f0;
+  @apply bg-base-weak;
   transform: rotateY(180deg);
 }
 
 .card-back {
-  background: #BE1622;
-  color: white;
+  @apply bg-primary text-base-weak;
 }
 
 .card-back:hover {
-  background: #880A13;
+  @apply bg-primary-strong;
 }
 
 .card.flipped .card-front {
@@ -48,6 +42,6 @@
 }
 
 .card.matched {
-  opacity: 0.5;
+  @apply opacity-50;
   cursor: default;
 }
