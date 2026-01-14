@@ -3,5 +3,5 @@
 }
 
 .link svg {
-  @apply w-[13.75rem];
+  @apply w-40 md:w-[13.75rem];
 }
